@@ -1,0 +1,8 @@
+spring-boot-app:
+  build: .
+  ports:
+   - "8080:8080"
+   - "8000:8000"
+  environment:
+   - "SPRING_PROFILES_ACTIVE=dev"
+   - "DEBUG=false"
