@@ -4,6 +4,8 @@ Features:
 - Debug mode
 - Spring profiles
 
+https://hub.docker.com/r/flopes/spring-boot-docker/
+
 ## How to use ?
 
 ### Copy your Spring Boot executable jar
