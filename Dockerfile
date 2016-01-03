@@ -7,7 +7,7 @@ VOLUME /tmp
 ENV APP_HOME /app
 ENV APP_JAR spring-boot-application.jar
 
-ADD assets/${APP_JAR} ${APP_HOME}/${APP_JAR}
+ONBUILD ADD assets/${APP_JAR} ${APP_HOME}/${APP_JAR}
 
 ADD assets/entrypoint.sh ${APP_HOME}/entrypoint.sh
 RUN chmod 755 ${APP_HOME}/entrypoint.sh
