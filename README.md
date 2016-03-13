@@ -1,5 +1,7 @@
 #Docker image + Docker Compose file for Spring Boot applications
 
+[![](https://badge.imagelayers.io/flopes/spring-boot-docker:latest.svg)](https://imagelayers.io/?images=flopes/spring-boot-docker:latest 'Get your own badge on imagelayers.io')
+
 Features:
 - Debug mode
 - Spring profiles
