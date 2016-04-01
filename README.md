@@ -2,6 +2,8 @@
 
 [![](https://badge.imagelayers.io/flopes/spring-boot-docker:latest.svg)](https://imagelayers.io/?images=flopes/spring-boot-docker:latest 'Get your own badge on imagelayers.io')
 
+[![](http://dockeri.co/image/flopes/spring-boot-docker)](http://dockeri.co/image/flopes/spring-boot-docker 'Docker build status')
+
 Features:
 - Debug mode
 - Spring profiles
