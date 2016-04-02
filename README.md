@@ -13,9 +13,10 @@ https://hub.docker.com/r/flopes/spring-boot-docker/
 ## How to use ?
 
 ### Copy your Spring Boot executable jar
-Put your application jar into the `assets` folder and rename it as follows: `spring-boot-application.jar`.
 
-By default, this image will pick an executable jar named `spring-boot-app.jar` under the `assets` directory.
+By default, this image will pick an executable jar named `spring-boot-application.jar` under the `assets` directory.
+
+Put your application jar into the `assets` folder and rename it as follows: `spring-boot-application.jar`.
 
 ### Start container
 `docker compose up -d`
