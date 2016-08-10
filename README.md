@@ -1,6 +1,6 @@
 #Docker image + Docker Compose file for Spring Boot applications
 
-[![](https://badge.imagelayers.io/flopes/spring-boot-docker:latest.svg)](https://imagelayers.io/?images=flopes/spring-boot-docker:latest 'Get your own badge on imagelayers.io')
+[![](https://images.microbadger.com/badges/image/flopes/spring-boot-docker.svg)](https://microbadger.com/images/flopes/spring-boot-docker "Get your own image badge on microbadger.com")
 
 [![](http://dockeri.co/image/flopes/spring-boot-docker)](http://dockeri.co/image/flopes/spring-boot-docker 'Docker build status')
 
