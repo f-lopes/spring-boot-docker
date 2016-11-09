@@ -2,15 +2,23 @@ FROM openjdk:8-jre-alpine
 
 MAINTAINER Florian Lopes <florian.lopes@outlook.com>
 
+ARG SERVER_PORT=8080
+ARG DEBUG_PORT=8000
+
 VOLUME /tmp
 
 ENV APP_HOME /app
-ENV APP_JAR spring-boot-application.jar
+ENV ARTIFACT_NAME ${ARTIFACT_NAME}
 
-COPY assets/* ${APP_HOME}/
+COPY assets/entrypoint.sh ${APP_HOME}/entrypoint.sh
 
-RUN chmod 755 ${APP_HOME}/entrypoint.sh && touch ${APP_HOME}/$ARTIFACT_NAME
+RUN chmod 755 ${APP_HOME}/entrypoint.sh && sh -c 'touch ${APP_HOME}/${ARTIFACT_NAME}'
 
-RUN bash -c 'touch ${APP_HOME}/${APP_JAR}'
+EXPOSE ${SERVER_PORT}
+EXPOSE ${DEBUG_PORT}
 
-ENTRYPOINT ["/app/entrypoint.sh"]
+WORKDIR ${APP_HOME}
+
+ONBUILD ADD assets/${ARTIFACT_NAME} ${APP_HOME}/${ARTIFACT_NAME}
+
+ENTRYPOINT ["./entrypoint.sh"]
