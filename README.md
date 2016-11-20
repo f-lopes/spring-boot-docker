@@ -1,4 +1,4 @@
-#Docker image + Docker Compose file for Spring Boot applications
+# Docker image + Docker Compose file for Spring Boot applications
 
 [![](https://images.microbadger.com/badges/image/flopes/spring-boot-docker.svg)](https://microbadger.com/images/flopes/spring-boot-docker "Get your own image badge on microbadger.com")
 
@@ -8,8 +8,22 @@ Features:
 - Debug mode
 - Spring profiles
 - Custom JAVA_OPTS
+- Healthcheck
 
-https://hub.docker.com/r/flopes/spring-boot-docker/
+This tag integrates an healthcheck feature to tell Docker how to check the status of the container. This feature simply executes an HTTP request to a given URL: `${SERVER_PROTOCOL}://localhost:${SERVER_PORT}/${HEALTHCHECK_CONTEXT}`
+
+## Available environment variables
+
+Name                    | Default   | Description
+------------------------|-----------|------------------------------------
+DEBUG                   | false | Enable or disable debug mode
+DEBUG_PORT              | 8000  | Debug port
+SPRING_PROFILES_ACTIVE  | dev   | Active Spring profiles
+JAVA_OPTS               |       | JAVA_OPTS
+**SERVER_PROTOCOL**     | http  | Spring Boot application server protocol, picked by the healthcheck command to check the application status
+**SERVER_PORT**         | 8080  | Spring Boot application server port (server.port), picked by the healthcheck command to check the application status
+**HEALTHCHECK_CONTEXT** | /     | The context URL to check the application status, picked by the healthcheck command to check the application status
+
 
 ## How to use ?
 
@@ -36,10 +50,12 @@ The `docker-compose.yml` file picks its configuration from the `.env` one.
 
 Using this file, you can set the desired properties:
 ```
-# Docker properties
+# Docker
 IMAGE_NAME=spring-boot-docker
+HEALTHCHECK_CONTEXT=/
 
-# Application properties
+# Application
+SERVER_PROTOCOL=http
 SERVER_PORT=8080
 DEBUG_PORT=8000
 SPRING_PROFILES_ACTIVE=dev
@@ -47,7 +63,7 @@ DEBUG=false
 # -Dprop=... -Dparameter=...
 JAVA_OPTS=
 
-# Host properties
+# Host
 HOST_SERVER_PORT=8080
 HOST_DEBUG_PORT=8000
 ```
