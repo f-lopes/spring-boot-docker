@@ -9,7 +9,14 @@ Features:
 - Spring profiles
 - Custom JAVA_OPTS
 
-https://hub.docker.com/r/flopes/spring-boot-docker/
+## Available environment variables
+
+Name                    | Default   | Description
+------------------------|-----------|------------------------------------
+DEBUG                   | false | Enable or disable debug mode
+DEBUG_PORT              | 8000  | Debug port
+SPRING_PROFILES_ACTIVE  | dev   | Active Spring profiles
+JAVA_OPTS               |       | JAVA_OPTS
 
 ## How to use ?
 
