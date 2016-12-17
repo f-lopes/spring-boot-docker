@@ -8,6 +8,7 @@ Features:
 - Debug mode
 - Spring profiles
 - Custom JAVA_OPTS
+- Health check (Docker tag `1.0-healthcheck` https://github.com/f-lopes/spring-boot-docker/tree/healthcheck)
 
 ## Available environment variables
 
