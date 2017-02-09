@@ -25,6 +25,6 @@ RUN apk --no-cache add curl
 
 ONBUILD ADD assets/${ARTIFACT_NAME} ${APP_HOME}/${ARTIFACT_NAME}
 
-HEALTHCHECK --timeout=10s CMD curl --fail ${SERVER_PROTOCOL}://localhost:${SERVER_PORT}/${HEALTHCHECK_CONTEXT} || exit 1
+HEALTHCHECK CMD curl -v --fail ${SERVER_PROTOCOL}://localhost:${SERVER_PORT}/${HEALTHCHECK_CONTEXT} || exit 1
 
 ENTRYPOINT ["./entrypoint.sh"]
