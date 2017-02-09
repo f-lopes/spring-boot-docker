@@ -1,42 +1,46 @@
-#Docker image + Docker Compose file for Spring Boot applications
+#Lightweight Spring Boot Docker image based on Alpine + Docker Compose file
 
 [![](https://images.microbadger.com/badges/image/flopes/spring-boot-docker.svg)](https://microbadger.com/images/flopes/spring-boot-docker "Get your own image badge on microbadger.com")
 
 [![](http://dockeri.co/image/flopes/spring-boot-docker)](http://dockeri.co/image/flopes/spring-boot-docker 'Docker build status')
 
 Features:
-- Debug mode
 - Spring profiles
 - Custom JAVA_OPTS
+- Wrapper script that enables application to take PID 1 & receive SIGTERM signals
 - Health check (Docker tag `1.0-healthcheck` https://github.com/f-lopes/spring-boot-docker/tree/healthcheck)
+- Debug mode
 
 ## Available environment variables
 
 Name                    | Default   | Description
 ------------------------|-----------|------------------------------------
-DEBUG                   | false | Enable or disable debug mode
-DEBUG_PORT              | 8000  | Debug port
 SPRING_PROFILES_ACTIVE  | dev   | Active Spring profiles
 JAVA_OPTS               |       | JAVA_OPTS
+DEBUG                   | false | Enable or disable debug mode
+DEBUG_PORT              | 8000  | Debug port
+
 
 ## How to use ?
 
 1. Simply extend your image from `flopes/spring-boot-docker` and set your application name as an environment variable:
     ``` Docker
-    FROM flopes/spring-boot-docker
+    FROM flopes/spring-boot-docker:1.0
     
     ENV ARTIFACT_NAME my-spring-boot-application.jar
     ```
 
 2. Copy your Spring Boot executable jar into an `assets` folder and build you image:
-```docker build -t my-spring-boot-application . ```
+```docker build -t spring-boot-image . ```
 
 3. Start your application:
     - Using Docker CLI
-```docker run -d -p 8080:8080 my-spring-boot-application```
+
     - Using the provided ```docker-compose.yml``` in this repository:
 ```docker-compose up -d```
 
+### Inject environment variables:
+```docker run -d -p 8080:8080 -e JAVA_OPTS=-Xms256m -Xmx512m spring-boot-image```
 
 ## Using Docker Compose
 
