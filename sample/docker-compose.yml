@@ -1,0 +1,13 @@
+version: '2'
+services:
+  spring-boot:
+    build:
+      context: .
+    ports:
+     - "${HOST_SERVER_PORT}:${SERVER_PORT}"
+     - "${HOST_DEBUG_PORT}:${DEBUG_PORT}"
+    environment:
+     - "SPRING_PROFILES_ACTIVE=${SPRING_PROFILES_ACTIVE}"
+     - "DEBUG=${DEBUG}"
+     - "DEBUG_PORT=${DEBUG_PORT}"
+     - "JAVA_OPTS=${JAVA_OPTS}"

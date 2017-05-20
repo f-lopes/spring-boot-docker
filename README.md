@@ -29,13 +29,13 @@ DEBUG_PORT              | 8000  | Debug port
     FROM flopes/spring-boot-docker:1.1
     ```
 
-2. Copy your Spring Boot executable jar into an `assets` folder and build you image:
+2. Copy your Spring Boot executable jar into an `assets` folder, rename it to `spring-boot.jar` and build you image:
 ```docker build -t spring-boot-image . ```
 
 3. Start your application:
     - Using Docker CLI ```docker run -d -p 8080:8080 spring-boot-image```
 
-    - Using the provided ```docker-compose.yml``` in this repository:
+    - Using the provided ```docker-compose.yml``` in the `sample` directory:
 ```docker-compose up -d```
 
 ### Inject environment variables:
@@ -47,9 +47,6 @@ The `docker-compose.yml` file picks its configuration from the `.env` one.
 
 Using this file, you can set the desired properties:
 ```
-# Docker properties
-IMAGE_NAME=spring-boot-docker
-
 # Application properties
 SERVER_PORT=8080
 DEBUG_PORT=8000
