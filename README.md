@@ -1,7 +1,7 @@
 # Lightweight Spring Boot Docker image based on Alpine + Docker Compose file
 
 [![](https://images.microbadger.com/badges/image/flopes/spring-boot-docker.svg)](https://microbadger.com/images/flopes/spring-boot-docker "Get your own image badge on microbadger.com")
-[![](https://images.microbadger.com/badges/version/flopes/spring-boot-docker:1.0.svg)](https://microbadger.com/images/flopes/spring-boot-docker:1.0 "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/flopes/spring-boot-docker:1.1.svg)](https://microbadger.com/images/flopes/spring-boot-docker:1.0 "Get your own version badge on microbadger.com")
 [![](https://img.shields.io/docker/pulls/flopes/spring-boot-docker.svg)](https://img.shields.io/docker/pulls/flopes/spring-boot-docker.svg)
 [![](https://img.shields.io/docker/stars/flopes/spring-boot-docker.svg)](https://img.shields.io/docker/stars/flopes/spring-boot-docker.svg)
 
