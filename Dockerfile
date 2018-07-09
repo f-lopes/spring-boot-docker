@@ -1,6 +1,6 @@
 FROM openjdk:8-jre-alpine
 
-MAINTAINER Florian Lopes <florian.lopes@outlook.com>
+LABEL maintainer="Florian Lopes <florian.lopes@outlook.com>"
 
 ENV SERVER_PORT=8080
 ENV DEBUG_PORT=8000

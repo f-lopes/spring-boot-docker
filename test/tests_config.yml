@@ -1,0 +1,34 @@
+schemaVersion: "2.0.0"
+
+commandTests:
+  - name: "spring-boot user & home directory"
+    command: "cat /etc/passwd | grep spring-boot"
+    expectedOutput: ["spring-boot:x:100:65533:spring-boot:/home/spring-boot:/bin/false"]
+
+fileExistenceTests:
+  - name: 'entrypoint script'
+    path: '/app/entrypoint.sh'
+    shouldExist: true
+    permissions: '-r-xr-xr-x'
+
+metadataTest:
+  labels:
+    - key: maintainer
+      value: "Florian Lopes <florian.lopes@outlook.com>"
+  env:
+    - key: SERVER_PORT
+      value: 8080
+    - key: DEBUG_PORT
+      value: 8000
+    - key: APP_HOME
+      value: /app
+    - key: SPRING_BOOT_USER
+      value: spring-boot
+    - key: SPRING_BOOT_GROUP
+      value: spring-boot
+    - key: ARTIFACT_NAME
+      value: spring-boot.jar
+  exposedPorts: ["8080", "8000"]
+  volumes: ["/tmp"]
+  workdir: ["/app"]
+  entrypoint: ["./entrypoint.sh"]
