@@ -1,0 +1,6 @@
+sudo: required
+dist: trusty
+
+script:
+ - test/setup_tests.sh
+ - test/tests.sh
