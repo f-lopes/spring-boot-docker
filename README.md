@@ -4,6 +4,7 @@
 [![](https://images.microbadger.com/badges/version/flopes/spring-boot-docker:1.2.svg)](https://microbadger.com/images/flopes/spring-boot-docker:1.2 "Get your own version badge on microbadger.com")
 [![](https://img.shields.io/docker/pulls/flopes/spring-boot-docker.svg)](https://img.shields.io/docker/pulls/flopes/spring-boot-docker.svg)
 [![](https://img.shields.io/docker/stars/flopes/spring-boot-docker.svg)](https://img.shields.io/docker/stars/flopes/spring-boot-docker.svg)
+[![Build Status](https://travis-ci.org/f-lopes/spring-boot-docker.svg?branch=master)](https://travis-ci.org/f-lopes/spring-boot-docker)
 
 ## Features:
 - Uses lightweight openjdk:8-jre-alpine image
