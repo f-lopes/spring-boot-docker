@@ -2,7 +2,8 @@ schemaVersion: "2.0.0"
 
 commandTests:
   - name: "spring-boot user & home directory"
-    command: "cat /etc/passwd | grep spring-boot"
+    command: "cat"
+    args: ["/etc/passwd", ["| grep spring-boot"]]
     expectedOutput: ["spring-boot:x:100:65533:spring-boot:/home/spring-boot:/bin/false"]
 
 fileExistenceTests:
