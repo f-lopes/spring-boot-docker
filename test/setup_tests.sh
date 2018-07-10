@@ -15,4 +15,4 @@ echo
 echo "Pulling spring-boot-docker Docker image...."
 echo
 
-docker pull flopes/spring-boot-docker
+docker build -t spring-boot-docker .
