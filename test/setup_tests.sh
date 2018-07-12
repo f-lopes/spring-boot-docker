@@ -12,7 +12,7 @@ curl -LO https://storage.googleapis.com/container-structure-test/latest/containe
 export PATH=$PATH:/usr/local/bin
 
 echo
-echo "Pulling spring-boot-docker Docker image...."
+echo "Building spring-boot-docker Docker image...."
 echo
 
 docker build -t spring-boot-docker .
